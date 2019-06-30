@@ -1,14 +1,11 @@
 package com.aca;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Room {
 
     private final int number;
     private Guest guest;
     private RoomType roomType;
-    private List<Reservation> catalog = new ArrayList<>();
+    private Reservation[] catalog = new Reservation[3];
 
 
     public Room(int number) {
@@ -45,12 +42,18 @@ public class Room {
         this.roomType = roomType;
     }
 
-    public List<Reservation> getCatalog() {
+    public Reservation[] getCatalog() {
         return catalog;
     }
 
-    public void setCatalog(List<Reservation> catalog) {
+    public void setCatalog(Reservation[] catalog) {
         this.catalog = catalog;
+    }
+
+    public void printCatalog() {
+        for (Reservation reservation : catalog) {
+            System.out.println(reservation);
+        }
     }
 
     @Override

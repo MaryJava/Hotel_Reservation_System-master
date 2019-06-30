@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 
 public interface HotelBookingService {
 
-    void makeReservation(Reservation reservation);
-    
-    void cancelReservation(Room room);
+    void addReservation(Reservation reservation);
 
-    void checkIn();
+    void cancelReservation(Reservation reservation);
 
-    void checkOut();
+    void checkin(Reservation reservation, Guest guest);
+
+    void checkOut(Room room);
 }

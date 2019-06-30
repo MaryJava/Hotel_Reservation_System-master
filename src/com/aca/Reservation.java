@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 public class Reservation {
 
+    private String name;
     private LocalDateTime checkin;
     private LocalDateTime checkout;
     private Room room;
@@ -12,11 +13,20 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(LocalDateTime checkin, LocalDateTime checkout, Room room, ReservationStatus reservationStatus) {
+    public Reservation(String name, LocalDateTime checkin, LocalDateTime checkout, Room room, ReservationStatus reservationStatus) {
+        this.name = name;
         this.checkin = checkin;
         this.checkout = checkout;
         this.room = room;
         this.reservationStatus = reservationStatus;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LocalDateTime getCheckin() {
@@ -54,7 +64,8 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation{" +
-                "checkin=" + checkin +
+                "name='" + name + '\'' +
+                ", checkin=" + checkin +
                 ", checkout=" + checkout +
                 ", room=" + room +
                 ", reservationStatus=" + reservationStatus +
